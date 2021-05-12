@@ -9,5 +9,10 @@ phases:
 artifacts:
   files:
     - distributable_lambda.zip
-    - appspec.yml
+  name: test-lambda-$Env:CODEBUILD_BUILD_NUMBER-$(Get-Date -UFormat "%Y%m%d-%H%M%S")
+  secondary-artifacts:
+    appSpec:
+      files:
+        - appspec.yml
+      name: appspec.yml
 
