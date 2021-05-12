@@ -9,4 +9,3 @@ phases:
 artifacts:
   files:
     - distributable_lambda.zip
-    - appspec.yml

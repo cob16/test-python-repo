@@ -3,3 +3,10 @@ os: linux
 files:
   - source: ./distributable_lambda.zip
     destination: /tmp
+
+version: 0.0
+Resources:
+  - myLambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "cormac-test-function"
