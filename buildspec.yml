@@ -7,10 +7,11 @@ phases:
     commands:
       - zip -r distributable_lambda.zip ./src
 artifacts:
-  files:
-    - distributable_lambda.zip
-  name: test-lambda-$Env:CODEBUILD_BUILD_NUMBER-$(Get-Date -UFormat "%Y%m%d-%H%M%S")
   secondary-artifacts:
+    BuildArtifact:
+      name: test-lambda-$Env:CODEBUILD_BUILD_NUMBER-$(Get-Date -UFormat "%Y%m%d-%H%M%S")
+      files:
+        - distributable_lambda.zip
     appSpec:
       files:
         - appspec.yml
